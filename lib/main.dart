@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:expandable/expandable.dart';
 import 'package:luvit_application/firebase_options.dart';
-import 'package:luvit_application/networkRequest/apiRequest.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../widgets/svg_widget.dart';
 
@@ -21,7 +20,7 @@ class DraggableCardApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Drag()
     );
@@ -64,8 +63,8 @@ class _DragState extends State<Drag> {
           cornerRadius: 10,
           activeColor: Colors.pink,
           items: [
-            TabItem(icon: Icons.home_rounded, title: '홈'),
-            TabItem(icon: Icons.location_on, title: '스팟'),
+            const TabItem(icon: Icons.home_rounded, title: '홈'),
+            const TabItem(icon: Icons.location_on, title: '스팟'),
             TabItem(
                 title: '',
                 icon: SvgWidget(
@@ -108,8 +107,8 @@ class _DragState extends State<Drag> {
                 ),
               ),
             ),
-            Expanded(
-              child: const Text('   목이길어슬픈기린님의 새로운 스팟',
+            const Expanded(
+              child: Text('   목이길어슬픈기린님의 새로운 스팟',
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14)),
             ),
           ],
@@ -133,8 +132,8 @@ class _DragState extends State<Drag> {
                         imgPath: 'assets/star.svg',
                         imageWidth: 14,
                         imageHeight: 14),
-                    Spacer(),
-                    Text('323,323',
+                    const Spacer(),
+                    const Text('323,323',
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 13))
                   ],
@@ -142,7 +141,7 @@ class _DragState extends State<Drag> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           SvgWidget(imgPath: 'assets/noti.svg', imageWidth: 45, imageHeight: 45)
@@ -163,17 +162,17 @@ class _DragState extends State<Drag> {
                         child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             "추천 드릴 친구들을 준비 중이에요",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 24,
                                 fontWeight: FontWeight.w600),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
-                          Text(
+                          const Text(
                             "추천 드릴 친구들을 준비 중이에요",
                             style: TextStyle(
                                 color: Colors.white,
@@ -192,13 +191,11 @@ class _DragState extends State<Drag> {
                               double dy = details.velocity.pixelsPerSecond.dy;
 
                               if (dx > 0 && dx.abs() > dy.abs()) {
-                                // Check for rightward drag and a stronger horizontal movement than vertical
                                 setState(() {
                                   print('hori-----');
                                   name.removeAt(i);
                                 });
                               } else if (dy > 0) {
-                                // Check for downward drag
                                 setState(() {
                                   print('verti-----');
 
@@ -226,13 +223,13 @@ class _DragState extends State<Drag> {
                                           return const LinearGradient(
                                             colors: [
                                               Color(
-                                                  0xFF3A3A3A), // Replace with your desired colors
+                                                  0xFF3A3A3A),
                                               Colors.transparent,
                                             ],
                                             stops: [
                                               0.6333333,
                                               0.99999
-                                            ], // Adjust the stops to control the gradient position
+                                            ],
                                             begin: Alignment.center,
                                             end: Alignment.bottomCenter,
                                           ).createShader(bounds);
@@ -302,8 +299,8 @@ class _DragState extends State<Drag> {
                                                                           color:
                                                                           Colors.grey[800],
                                                                         )),
-                                                                    Spacer(),
-                                                                    Text(
+                                                                    const Spacer(),
+                                                                    const Text(
                                                                         '323,323',
                                                                         style: TextStyle(
                                                                             color: Colors.white,
@@ -313,7 +310,7 @@ class _DragState extends State<Drag> {
                                                                 ),
                                                               ),
                                                             ),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                                 height: 8),
                                                             Row(
                                                               children: [
@@ -329,7 +326,7 @@ class _DragState extends State<Drag> {
                                                                           '목이길어슬픈기린님의 새로운 스팟',
                                                                           maxLines: 2,
                                                                           style: TextStyle(fontFamily: 'Pretendard', color: Colors.white, fontWeight: FontWeight.w700, fontSize: 18)),
-                                                                      SizedBox(
+                                                                      const SizedBox(
                                                                         height:
                                                                         5,
                                                                       ),
@@ -340,7 +337,7 @@ class _DragState extends State<Drag> {
                                                                         decoration:
                                                                         BoxDecoration(
                                                                           border:
-                                                                          Border.all(width: 1, color: Color(0xFFFF016B)),
+                                                                          Border.all(width: 1, color: const Color(0xFFFF016B)),
                                                                           borderRadius:
                                                                           BorderRadius.circular(20),
                                                                           gradient:
@@ -348,20 +345,20 @@ class _DragState extends State<Drag> {
                                                                             begin: Alignment.centerLeft,
                                                                             end: Alignment.centerRight,
                                                                             colors: [
-                                                                              Color(0xFFFF016B).withOpacity(0.2),
-                                                                              Color(0xFFFF016B).withOpacity(0.2),
+                                                                              const Color(0xFFFF016B).withOpacity(0.2),
+                                                                              const Color(0xFFFF016B).withOpacity(0.2),
                                                                             ],
                                                                           ),
                                                                         ),
                                                                         child:
-                                                                        Padding(
+                                                                        const Padding(
                                                                           padding:
-                                                                          const EdgeInsets.symmetric(horizontal: 5,vertical: 6),
+                                                                          EdgeInsets.symmetric(horizontal: 5,vertical: 6),
                                                                           child:Text('💖 진지한 연애를 찾는 중', style: TextStyle(color: Colors.pink, fontWeight: FontWeight.w500, fontSize: 13))
 
                                                                         ),
                                                                       ),
-                                                                      SizedBox(
+                                                                      const SizedBox(
                                                                         height:
                                                                         8,
                                                                       ),
@@ -377,14 +374,14 @@ class _DragState extends State<Drag> {
                                                                                 borderRadius:
                                                                                 BorderRadius.circular(20),
                                                                                 color: Colors.grey[900]                                                                         ),
-                                                                            child: Padding(
+                                                                            child: const Padding(
                                                                               padding:
-                                                                              const EdgeInsets.symmetric(horizontal: 6,vertical: 5),
+                                                                              EdgeInsets.symmetric(horizontal: 6,vertical: 5),
                                                                               child: Center(child: Text('🍸 전혀 안 함',style: TextStyle(color:Colors.white,fontSize:14,fontWeight:FontWeight.w400),)),
 
                                                                             ),
                                                                           ),
-                                                                          SizedBox(width: 5,),
+                                                                          const SizedBox(width: 5,),
                                                                           Container(
                                                                             height:
                                                                             36,
@@ -396,16 +393,16 @@ class _DragState extends State<Drag> {
                                                                                 BorderRadius.circular(20),
                                                                                 color: Colors.grey[900]                                                                         ),
                                                                             child:
-                                                                            Padding(
+                                                                            const Padding(
                                                                               padding:
-                                                                              const EdgeInsets.symmetric(horizontal: 6,vertical: 5),
+                                                                              EdgeInsets.symmetric(horizontal: 6,vertical: 5),
                                                                               child: Center(child: Text('\u{1F6AC} 비흡연',style: TextStyle(color:Colors.white,fontSize:14,fontWeight:FontWeight.w400),)),
 
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
-                                                                      SizedBox(height: 8,),
+                                                                      const SizedBox(height: 8,),
                                                                       Container(
                                                                         width:
                                                                         130,
@@ -419,13 +416,13 @@ class _DragState extends State<Drag> {
                                                                             BorderRadius.circular(20),
                                                                             color: Colors.grey[900]                                                                         ),
                                                                         child:
-                                                                        Padding(
+                                                                        const Padding(
                                                                           padding:
-                                                                          const EdgeInsets.symmetric(horizontal: 5),
+                                                                          EdgeInsets.symmetric(horizontal: 5),
                                                                           child:
                                                                           Padding(
                                                                             padding:
-                                                                            const EdgeInsets.symmetric(horizontal: 6,vertical: 5),
+                                                                            EdgeInsets.symmetric(horizontal: 6,vertical: 5),
                                                                             child:
                                                                             Center(child: Text('💪🏻 매일 1시간 이상',style: TextStyle(color:Colors.white,fontSize:14,fontWeight:FontWeight.w400),)),
 
@@ -445,15 +442,15 @@ class _DragState extends State<Drag> {
                                                                                 BorderRadius.circular(20),
                                                                                 color: Colors.grey[900]                                                                         ),
                                                                             child:
-                                                                            Padding(
+                                                                            const Padding(
                                                                               padding:
-                                                                              const EdgeInsets.symmetric(horizontal: 6,vertical: 5),
+                                                                              EdgeInsets.symmetric(horizontal: 6,vertical: 5),
                                                                               child:
                                                                               Center(child: Text('🤝 만나는 걸 좋아함',style: TextStyle(color:Colors.white,fontSize:14,fontWeight:FontWeight.w400),)),
 
                                                                             ),
                                                                           ),
-                                                                          SizedBox(width: 5,),
+                                                                          const SizedBox(width: 5,),
                                                                           Container(
 
                                                                             height:
@@ -466,9 +463,9 @@ class _DragState extends State<Drag> {
                                                                                 BorderRadius.circular(20),
                                                                                 color: Colors.grey[900]                                                                         ),
                                                                             child:
-                                                                            Padding(
+                                                                            const Padding(
                                                                               padding:
-                                                                              const EdgeInsets.symmetric(horizontal: 6,vertical: 5),
+                                                                              EdgeInsets.symmetric(horizontal: 6,vertical: 5),
                                                                               child:
                                                                               Center(child: Text('NFP',style: TextStyle(color:Colors.white,fontSize:14,fontWeight:FontWeight.w400),)),
                                                                             ),
@@ -492,7 +489,7 @@ class _DragState extends State<Drag> {
                                                           ],
                                                         ),
                                                         expanded: Padding(
-                                                          padding: EdgeInsets
+                                                          padding: const EdgeInsets
                                                               .symmetric(
                                                                   horizontal:
                                                                       0.0),
@@ -539,8 +536,8 @@ class _DragState extends State<Drag> {
                                                                                 color:
                                                                                     Colors.grey[800],
                                                                               )),
-                                                                              Spacer(),
-                                                                              Text(
+                                                                              const Spacer(),
+                                                                              const Text(
                                                                                   '323,323',
                                                                                   style: TextStyle(
                                                                                       color: Colors.white,
@@ -550,7 +547,7 @@ class _DragState extends State<Drag> {
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                      SizedBox(
+                                                                      const SizedBox(
                                                                           height: 5),
                                                                       Column(
                                                                         crossAxisAlignment:
@@ -568,7 +565,7 @@ class _DragState extends State<Drag> {
                                                                           Container(
                                                                             width:
                                                                                 200,
-                                                                            child: Text(
+                                                                            child: const Text(
                                                                                 '서로 아껴주고 힘이 되어줄 사람 찾아요 선릉으로 직장 다니고 있고 여행 좋아해요 이상한 이야기하시는 분 바로 차단입니다',
                                                                                 maxLines: 4,
                                                                                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: 15)),
@@ -578,7 +575,7 @@ class _DragState extends State<Drag> {
 
                                                                     ],
                                                                   ),
-                                                                  SizedBox(height:60),
+                                                                  const SizedBox(height:60),
                                                                   Padding(
                                                                     padding: const EdgeInsets.only(right: 8.0),
                                                                     child: SvgWidget(
@@ -609,12 +606,12 @@ class _DragState extends State<Drag> {
                                                         },
                                                         child: expandableController
                                                                 .expanded
-                                                            ? Icon(
+                                                            ? const Icon(
                                                                 Icons
                                                                     .keyboard_arrow_up,
                                                                 color: Colors
                                                                     .white,size: 35,)
-                                                            : Icon(
+                                                            : const Icon(
                                                             size: 35,
                                                                 Icons
                                                                     .keyboard_arrow_down,
@@ -622,7 +619,7 @@ class _DragState extends State<Drag> {
                                                                     .white,),
                                                       )),
                                                     ),
-                                                    SizedBox(height: 5),
+                                                    const SizedBox(height: 5),
                                                   ],
                                                 ),
                                               ),
@@ -675,7 +672,7 @@ class _DragState extends State<Drag> {
                                           child: AnimatedSmoothIndicator(
                                         activeIndex: index,
                                         count: name.length,
-                                        effect: SlideEffect(
+                                        effect: const SlideEffect(
                                             spacing: 8.0,
                                             radius: 5.0,
                                             dotWidth: 80.0,
@@ -683,54 +680,10 @@ class _DragState extends State<Drag> {
                                             dotColor: Colors.black,
                                             activeDotColor: Colors.pink),
                                       )
-                                          // DotsIndicator(
-                                          //   dotsCount: name.length,
-                                          //   position: index,
-                                          //
-                                          //     decorator: DotsDecorator(
-                                          //       size: Size(50, 2), // Set the size to control the width and height of rectangles
-                                          //       activeColor: Colors.green,
-                                          //       color: Colors.white,
-                                          //       spacing: EdgeInsets.only(left: 5, right: 5),
-                                          //       shape: RoundedRectangleBorder(
-                                          //         side: BorderSide(color: Colors.green),
-                                          //         borderRadius: BorderRadius.circular(0), // Set this to 0 to make rectangles
-                                          //       ),
-                                          //       activeShape: RoundedRectangleBorder(
-                                          //
-                                          //         side: BorderSide(color: Colors.green,width: 30, ),
-                                          //         borderRadius: BorderRadius.circular(0), // Set this to 0 to make rectangles
-                                          //       ),
-                                          //     ),
-                                          // ),
                                           ),
                                     ),
                                   ),
                                 )
-                                // Positioned(
-                                //   child: Container(
-                                //     height:70,width:150,
-                                //     child:DotsIndicator(
-                                //     dotsCount: name.length,
-                                //     position: index,
-                                //
-                                //     decorator: DotsDecorator(
-                                //       size: Size.fromHeight(4),
-                                //       activeColor: Colors.green,
-                                //       color: Colors.white,
-                                //       spacing: EdgeInsets.only(left: 5, right: 5),
-                                //       shape:
-                                //       //circle shape
-                                //       RoundedRectangleBorder(
-                                //           side: BorderSide(color: Colors.green),
-                                //           borderRadius: BorderRadius.circular(5.0)),
-                                //       activeShape: RoundedRectangleBorder(
-                                //           borderRadius: BorderRadius.circular(5.0)),
-                                //     ),
-                                //   ),)
-                                //
-                                //
-                                // )
                               ],
                             ),
                             feedback: Stack(
